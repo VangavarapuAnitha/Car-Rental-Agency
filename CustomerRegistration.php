@@ -1,3 +1,24 @@
+<?php
+require 'connection.php';
+
+if(isset($_POST["submit"])){
+  $cemail = $_POST["cemail"];
+  $cname = $_POST["cname"];
+  $cage = $_POST["cage"];
+  $cnumber = $_POST["cnumber"];
+  $cpassword = $_POST["cpassword"];
+
+  $query = "INSERT INTO CustomerDetails (cemail, cname, cage, cnumber, cpassword) VALUES ('$cemail','$cname','$cage','$cnumber','$cpassword')";
+  
+  if(mysqli_query($conn, $query)){
+    echo "Data inserted successfully";
+  } else{
+    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+  }
+} 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,21 +83,21 @@
     </header>
 
     <section>
-      <form id="CustomerRegistrationForm" onsubmit="validateForm()">
+      <form action="#" method="POST">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="cemail" name="cemail" required />
 
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="cname" name="cname" required />
 
         <label for="age">Age:</label>
-        <input type="text" id="age" name="age" required />
+        <input type="text" id="cage" name="cage" required />
 
         <label for="number">Mobile Number:</label>
-        <input type="number" id="number" name="number" required />
+        <input type="number" id="cnumber" name="cnumber" required />
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="cpassword" name="cpassword" required />
 
         <!-- <label for="registrationType">Registration Type:</label>
         <select id="registrationType" name="registrationType" required>
@@ -84,18 +105,18 @@
           <option value="agency">Car Rental Agency</option>
         </select> -->
 
-        <button type="submit">Register</button>
+        <button type="submit" onsubmit="validateForm()" name="submit">Register</button>
       </form>
     </section>
 
     <script>
       function validateForm() {
         // Add your validation logic here
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var age = document.getElementById("age").value;
-        var number = document.getElementById("number").value;
+        var cname = document.getElementById("cname").value;
+        var cemail = document.getElementById("cemail").value;
+        var cpassword = document.getElementById("cpassword").value;
+        var cage = document.getElementById("cage").value;
+        var cnumber = document.getElementById("cnumber").value;
 
         // var registrationType =
         //   document.getElementById("registrationType").value;
@@ -103,7 +124,7 @@
         // Add more validation checks as needed
 
         // Example: Check if email is valid
-        if (!isValidEmail(email)) {
+        if (!isValidEmail(cemail)) {
           alert("Invalid email address");
           return false;
         }
@@ -111,10 +132,10 @@
         alert("Registration successful!");
         return true;
 
-        function isValidEmail(email) {
+        function isValidEmail(cemail) {
           // Simple email validation using a regular expression
           var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
+          return emailRegex.test(cemail);
         }
         document.getElementById("CustomerRegistrationForm").reset();
       }

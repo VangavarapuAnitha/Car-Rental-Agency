@@ -54,25 +54,25 @@
 </head>
 <body>
   <header>
-    <h1>Register As</h1>
+    <h1>Login As</h1>
   </header>
   <section>
-    <label for="registrationType">Registration Type:</label>
+    <label for="registrationType">Login Type:</label>
     <select id="registrationType" name="registrationType" required>
-      <option value="CustomerRegistration.php">Customer</option>
-      <option value="AgentRegistrationForm.php">Car Rental Agent</option>
+      <option value="CustomerLogin.html">Customer</option>
+      <option value="AgentLogin.html">Car Rental Agent</option>
     </select>
-    <button onclick="Registrations()">Register</button>
+    <button onclick="Logins()">Login</button>
   </section>
 
   <script>
-    function Registrations() {
+    function Logins() {
       var destination = document.getElementById("registrationType").value;
-      if (destination === "CustomerRegistration.php") {
+      if (destination === "CustomerLogin.html") {
         // Navigate to the selected destination
         window.location.href = destination;
       }
-      if (destination === "AgentRegistrationForm.php") {
+      if (destination === "AgentLogin.html") {
         // Navigate to the selected destination
         window.location.href = destination;
       }

@@ -1,8 +1,14 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="car_rental_agency";
+// Create connection
+$conn = new mysqli($servername, $username, $password,$dbname,3307);
 
-
-$con= new mysqli("localhost","root","","car_rental_agency");
-if($con->connect_error()){
-    exit('Failed to connect to mysql: '.connect_error());
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully";
 ?>
