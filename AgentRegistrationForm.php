@@ -1,3 +1,26 @@
+<?php
+require 'connection.php';
+
+if(isset($_POST["submit"])){
+  
+  $email = $_POST["email"];
+  $fullName = $_POST["fullName"];
+  $phone= $_POST["phone"];
+  $companyName = $_POST["companyName"];
+  $licenseNumber = $_POST["licenseNumber"];
+  $address = $_POST["address"];
+
+  $query = "INSERT INTO agentdetails (email, fullName, phone, companyName, licenseNumber,address) VALUES ('$email','$fullName','$phone','$companyName ','$licenseNumber','$address')";
+  
+  if(mysqli_query($conn, $query)){
+    echo "Data inserted successfully";
+  } else{
+    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+  }
+} 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,12 +83,14 @@
       <h1>Registration</h1>
     </header>
 
-    <form id="agentRegistrationForm" onclick="validateForm()">
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" name="fullName" required />
+    <form id="agentRegistrationForm" onclick="validateForm()" action="#" method="POST">
+      
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required />
+
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required />
 
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" required />
@@ -79,13 +104,14 @@
       <label for="address">Address:</label>
       <textarea id="address" name="address" rows="4" required></textarea>
 
-      <button type="submit">Register</button>
+      <button type="submit" name="submit">Register</button>
     </form>
 
     <script>
       function validateForm() {
-        var fullName = document.getElementById("fullName").value;
+        
         var email = document.getElementById("email").value;
+        var fullName = document.getElementById("fullName").value;
         var phone = document.getElementById("phone").value;
         var companyName = document.getElementById("companyName").value;
         var licenseNumber = document.getElementById("licenseNumber").value;

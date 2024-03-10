@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Car</title>
+    <link rel="stylesheet" href="AddCar.css" />
+  </head>
+  <body>
+    <div id="add-car-container">
+      <form id="add-car-form" action="AddCar.php" method="post">
+        <a href="DisplayCar.php">View Car Details</a>
+        <a href="RentedCars.php">Rented Cars</a>
+        <h2>Add New Car Details</h2>
+        <input
+          type="text"
+          id="VehicleModel"
+          name="VehicleModel"
+          placeholder="VehicleModel"
+          required
+        />
+        <br />
+        <input
+          type="text"
+          id="VehicleNumber"
+          name="VehicleNumber"
+          placeholder="VehicleNumber"
+          required
+        />
+        <br />
+        <input
+          type="number"
+          id="SeatingCapacity"
+          name="SeatingCapacity"
+          placeholder="SeatingCapacity"
+          required
+        />
+        <br />
+        <input
+          type="number"
+          id="RentPerDay"
+          name="RentPerDay"
+          placeholder="RentPerDay"
+          required
+        />
+        <br />
+        <input
+          type="text"
+          id="CarAvailability"
+          name="CarAvailability"
+          placeholder="CarAvailability"
+          required
+        />
+        <br />
+        <button type="submit" onsubmit="addCar()" name="submit">Add Car</button>
+      </form>
+    </div>
+
+    <script src="AddCar.js"></script>
+  </body>
+</html>

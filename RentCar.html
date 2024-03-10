@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Rental</title>
+  </head>
+  <body>
+    <h1>Car Rental System</h1>
+
+    <form action="RentCar.php" method="post">
+      <label for="VehicleNumber">VehicleNumber:</label>
+      <input type="text" name="VehicleNumber" required />
+
+      <label for="customer_name">Customer Name:</label>
+      <input type="text" name="customer_name" required />
+
+      <label for="rental_days">Rental Days:</label>
+      <input type="number" name="rental_days" required />
+
+      <input type="submit" value="Rent Car" />
+    </form>
+  </body>
+</html>
