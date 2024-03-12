@@ -11,7 +11,10 @@ if(isset($_POST["submit"])){
   $query = "INSERT INTO CustomerDetails (cemail, cname, cage, cnumber, cpassword) VALUES ('$cemail','$cname','$cage','$cnumber','$cpassword')";
   
   if(mysqli_query($conn, $query)){
-    echo "Data inserted successfully";
+      echo '<script>';
+      echo 'alert("Registered Successfully");';
+      echo 'window.location.href = "CustomerRegistration.php";';
+      echo '</script>';
   } else{
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
   }
@@ -62,7 +65,7 @@ if(isset($_POST["submit"])){
 
       input {
         width: 100%;
-        padding: 10px;
+        padding: 4px;
         margin-bottom: 10px;
         box-sizing: border-box;
       }
@@ -75,7 +78,7 @@ if(isset($_POST["submit"])){
         border-radius: 5px;
         cursor: pointer;
       }
-    </style>
+     </style>
   </head>
   <body>
     <header>
@@ -108,7 +111,6 @@ if(isset($_POST["submit"])){
         <button type="submit" onsubmit="validateForm()" name="submit">Register</button>
       </form>
     </section>
-
     <script>
       function validateForm() {
         // Add your validation logic here

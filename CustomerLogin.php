@@ -15,15 +15,13 @@ $result = $conn->query($sql);
 $response = array();
 
 if ($result->num_rows > 0) {
-    // Valid credentials
-    $response['success'] = true;
-<<<<<<< HEAD
+    
     header("Location: AvailableCars.php");
-=======
->>>>>>> 1ac24b97b7e79049b1bfc61be0e1e98cdc66d174
 } else {
-    // Invalid credentials
-    $response['success'] = false;
+       echo '<script>';
+      echo 'alert("Invalid Details");';
+      echo 'window.location.href = "CustomerLogin.html";';
+      echo '</script>';
 }
 
 // Send response as JSON

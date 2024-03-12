@@ -4,10 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Rental</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 8px;
+        text-align: center;
+      }
+
+      form {
+        width: 300px;
+        margin: 100px auto;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>Car Rental System</h1>
-
+    <header>
+      <h1>Car Rental System</h1>
+      <h2>Rent A Car</h2>
+    </header>
     <form action="RentCar.php" method="post">
       <label for="VehicleNumber">VehicleNumber:</label>
       <input type="text" name="VehicleNumber" required />
@@ -18,7 +58,7 @@
       <label for="rental_days">Rental Days:</label>
       <input type="number" name="rental_days" required />
 
-      <input type="submit" value="Rent Car" />
+      <input type="submit" value="RentCar" />
     </form>
   </body>
 </html>

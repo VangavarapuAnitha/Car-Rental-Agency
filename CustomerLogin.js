@@ -12,13 +12,11 @@ function validateLogin() {
       if (response.success) {
         alert("Login successful!");
         // Redirect to another page or perform other actions after successful login
-<<<<<<< HEAD
         window.location.href = "AvailableCars.php";
-=======
-        window.location.href = "another_page.html";
->>>>>>> 1ac24b97b7e79049b1bfc61be0e1e98cdc66d174
       } else {
-        alert("Invalid credentials. Please try again.");
+        alert(" Invalid Login successful!");
+        // Redirect to another page or perform other actions after successful login
+        window.location.href = "CustomerLogin.html";
       }
     }
   };

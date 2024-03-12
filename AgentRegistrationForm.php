@@ -11,12 +11,15 @@ if(isset($_POST["submit"])){
   $address = $_POST["address"];
 
   $query = "INSERT INTO agentdetails (email, fullName, phone, companyName, licenseNumber,address) VALUES ('$email','$fullName','$phone','$companyName ','$licenseNumber','$address')";
-  
   if(mysqli_query($conn, $query)){
-    echo "Data inserted successfully";
+       echo '<script>';
+      echo 'alert("Registration Successfull!");';
+      echo 'window.location.href = "AvailableCars.php";';
+      echo '</script>';
   } else{
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
   }
+  
 } 
 ?>
 
@@ -38,7 +41,7 @@ if(isset($_POST["submit"])){
       header {
         background-color: #333;
         color: #fff;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
       }
 
@@ -49,11 +52,12 @@ if(isset($_POST["submit"])){
 
       form {
         max-width: 400px;
-        margin: 0 auto;
+        margin: 5px auto;
         background-color: #fff;
         padding: 20px;
         border: 1px solid #ddd;
         border-radius: 5px;
+        
       }
 
       label {
@@ -63,7 +67,7 @@ if(isset($_POST["submit"])){
 
       input {
         width: 100%;
-        padding: 10px;
+        padding: 3px;
         margin-bottom: 10px;
         box-sizing: border-box;
       }
@@ -76,16 +80,14 @@ if(isset($_POST["submit"])){
         border-radius: 5px;
         cursor: pointer;
       }
+      
     </style>
   </head>
   <body>
     <header>
       <h1>Registration</h1>
     </header>
-
     <form id="agentRegistrationForm" onclick="validateForm()" action="#" method="POST">
-      
-
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required />
 
@@ -106,7 +108,7 @@ if(isset($_POST["submit"])){
 
       <button type="submit" name="submit">Register</button>
     </form>
-
+    
     <script>
       function validateForm() {
         
@@ -117,22 +119,12 @@ if(isset($_POST["submit"])){
         var licenseNumber = document.getElementById("licenseNumber").value;
         var address = document.getElementById("address").value;
 
-        // You can perform further validation or processing here before submission
-        // For simplicity, we'll just display the collected information in the console
-        // console.log("Full Name: " + fullName);
-        // console.log("Email: " + email);
-        // console.log("Phone Number: " + phone);
-        // console.log("Company Name: " + companyName);
-        // console.log("License Number: " + licenseNumber);
-        // console.log("Address: " + address);
-
-        // Reset the form after submission if needed
+        
         if (!isValidEmail(email)) {
           alert("Invalid email address");
           return false;
         }
 
-        alert("Registration successful!");
         return true;
 
         function isValidEmail(email) {

@@ -7,23 +7,25 @@
     <link rel="stylesheet" href="AgentLogin.css" />
   </head>
   <body>
-    <div id="login-container">
-      <h2>Login</h2>
-      <form id="login-form" action="AgentLogin.php" method="POST">
-        <input
-          type="text"
-          id="licenseNumber"
-          name="licenseNumber"
-          placeholder="LicenseNumber"
-          required
-        />
-        
-        <br />
-        <button type="submit" onsubmit="validateLogin()" name="submit">
-          Login
-        </button>
-      </form>
-    </div>
+    <header>
+      <h1>Car Rental Agency</h1>
+      <h2>Agent Login</h2>
+    </header>
+
+    <form action="AgentLogin.php" method="POST">
+      <input
+        type="text"
+        id="licenseNumber"
+        name="licenseNumber"
+        placeholder="LicenseNumber"
+        required
+      />
+
+      <br />
+      <button type="submit" onsubmit="validateLogin()" name="submit">
+        Login
+      </button>
+    </form>
 
     <script src="AgentLogin.js"></script>
   </body>

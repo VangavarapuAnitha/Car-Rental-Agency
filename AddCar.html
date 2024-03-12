@@ -7,63 +7,55 @@
     <link rel="stylesheet" href="AddCar.css" />
   </head>
   <body>
-    <div id="add-car-container">
-<<<<<<< HEAD
-      <form id="add-car-form" action="AddCar.php" method="post">
+    <header>
+      <h1>Car Rental Agency</h1>
+      <nav>
         <a href="DisplayCar.php">View Car Details</a>
         <a href="RentedCars.php">Rented Cars</a>
-        <h2>Add New Car Details</h2>
-=======
-      <h2>Add Car</h2>
-      <form id="add-car-form" action="AddCar.php" method="post">
->>>>>>> 1ac24b97b7e79049b1bfc61be0e1e98cdc66d174
-        <input
-          type="text"
-          id="VehicleModel"
-          name="VehicleModel"
-          placeholder="VehicleModel"
-          required
-        />
-        <br />
-        <input
-          type="text"
-          id="VehicleNumber"
-          name="VehicleNumber"
-          placeholder="VehicleNumber"
-          required
-        />
-        <br />
-        <input
-          type="number"
-          id="SeatingCapacity"
-          name="SeatingCapacity"
-          placeholder="SeatingCapacity"
-          required
-        />
-        <br />
-        <input
-          type="number"
-          id="RentPerDay"
-          name="RentPerDay"
-          placeholder="RentPerDay"
-          required
-        />
-        <br />
-<<<<<<< HEAD
-        <input
-          type="text"
-          id="CarAvailability"
-          name="CarAvailability"
-          placeholder="CarAvailability"
-          required
-        />
-        <br />
-        <button type="submit" onsubmit="addCar()" name="submit">Add Car</button>
-=======
-        <button type="submit" onsubmit="addCar()">Add Car</button>
->>>>>>> 1ac24b97b7e79049b1bfc61be0e1e98cdc66d174
-      </form>
-    </div>
+      </nav>
+    </header>
+    <form id="add-car-form" action="AddCar.php" method="post">
+      <h2>Add New Car Details</h2>
+      <input
+        type="text"
+        id="VehicleModel"
+        name="VehicleModel"
+        placeholder="VehicleModel"
+        required
+      />
+      <br />
+      <input
+        type="text"
+        id="VehicleNumber"
+        name="VehicleNumber"
+        placeholder="VehicleNumber"
+        required
+      />
+      <br />
+      <input
+        type="number"
+        id="SeatingCapacity"
+        name="SeatingCapacity"
+        placeholder="SeatingCapacity"
+        required
+      />
+      <br />
+      <input
+        type="number"
+        id="RentPerDay"
+        name="RentPerDay"
+        placeholder="RentPerDay"
+        required
+      />
+      <br />
+      <select id="CarAvailability" name="CarAvailability" required>
+        <option value="" disabled selected>Select Availability</option>
+        <option value="1">Available</option>
+        <option value="0">Unavailable</option>
+      </select>
+      <br />
+      <button type="submit" onsubmit="addCar()" name="submit">Add Car</button>
+    </form>
 
     <script src="AddCar.js"></script>
   </body>
